@@ -1,8 +1,9 @@
 # Blog of Markdown
 
-Static web site built from Markdown documents using shell, make and some other
-command line tools. Running [`make`](https://www.gnu.org/software/make/) in the
-repository root should update all HTML from Markdown documents.
+Static web site built from Markdown documents using shell,
+[make](https://www.gnu.org/software/make/) and some other command line tools.
+Running `make` in the repository root should update all HTML from Markdown
+documents.
 
 The typical workflow is to store everything in [Git](https://git-scm.com/) and
 push it to a web server when documents has been updated. Since everything is
@@ -18,7 +19,7 @@ example.
 ## Required Tools
 
 Install the following tools first. Both tools requires a working
-[`Go`](http://golang.org) installation.
+[Go](http://golang.org) installation.
 
 ### html_escape
 
