@@ -65,6 +65,7 @@ cat <<EOF
 <head>
 <meta charset="UTF-8">
 <meta name="keywords" content="$html_keywords">
+<meta name="viewport" content="width=device-width, initial-scale=0.8">
 <title>${html_title}</title>
 <link rel="stylesheet" href="${css_href}">
 </head>
