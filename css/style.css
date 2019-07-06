@@ -3,6 +3,10 @@ body {
     font-family: sans-serif;
 }
 
+p {
+    line-height: 1.25;
+}
+
 /* Headline sizes */
 h1 { font: 180% sans-serif }
 h2 { font: 140% sans-serif }
