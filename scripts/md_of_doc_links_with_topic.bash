@@ -21,7 +21,6 @@ output=$(for meta in "$@"; do
     topics=""
     title=""
     published=""
-    revised=""
     source "$meta"
     for topic in $topics; do
 	if [ "$search_topic" = "$topic" ]; then
@@ -29,14 +28,11 @@ output=$(for meta in "$@"; do
 		echoerr "${meta}: title is required"
 		exit 1
 	    fi
-	    if [ x"${published}${revised}" = x ]; then
-		echoerr "${meta}: published or revised date is required"
+	    if [ -z "$published" ]; then
+		echoerr "${meta}: published date is required"
 		exit 1
 	    fi
-	    if [ -z "$revised" ]; then
-		revised="$published"
-	    fi
-	    echo "* [${revised}: $(html_escape "$title")](${meta%.meta}.html)"
+	    echo "* [${published}: $(html_escape "$title")](${meta%.meta}.html)"
 	    break
 	fi
     done
