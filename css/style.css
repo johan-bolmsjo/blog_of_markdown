@@ -1,14 +1,13 @@
 /* Default font */
 body {
     font-family: sans-serif;
-    /* font-size: 12pt; */
 }
 
 /* Fix monspace size issues in some browsers.
    See: https://github.com/necolas/normalize.css/issues/519#issuecomment-197131966 */
 tt, code, pre {
     font-family: monospace, monospace;
-    /* font-size: 12pt; */
+    font-size: 1em;
 }
 
 p {
