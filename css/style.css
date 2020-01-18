@@ -1,101 +1,128 @@
-/* Default font */
-body {
-    font-family: sans-serif;
+html {
+    line-height: 1.25;
+    -webkit-text-size-adjust: 100%;
 }
+
+body { font-family: serif; font-size: 18px; color #333; }
 
 /* Fix monspace size issues in some browsers.
    See: https://github.com/necolas/normalize.css/issues/519#issuecomment-197131966 */
 tt, code, pre {
     font-family: monospace, monospace;
-    font-size: 1em;
+    font-size: 90%;
 }
 
-p {
-    line-height: 1.25;
+pre {
+    border-left: 5px solid #bbb;
+    padding: 6px 0px 6px 10px; 
+    margin-left: 2em;
 }
 
-/* Headline sizes */
-h1 { font: 180% sans-serif }
-h2 { font: 140% sans-serif }
-h3 { font: 120% sans-serif }
-h4 { font: 110% sans-serif }
-h5 { font: italic 100% sans-serif }
+h1 { font: 180% sans-serif; }
+h2 { font: 150% sans-serif; }
+h3 { font: 130% sans-serif; }
+h4 { font: 120% sans-serif; }
+h5 { font: 110% sans-serif; }
 
-/* Links and images */
-a, img {
+h1, h2, h3, h4, h5 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: #375eab;
+}
+
+img {
+    border: 1px solid #333;
+    width:  100%;
+    height: auto;
+}
+
+figure {
+    margin-left: 0px;
+}
+
+a {
     border:  none;
     outline: none;
 }
 
-/* Definition lists */
-dt, dd {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-dt {
-    font-weight: bold;
+a {
+    color: #0000ee;
+    text-decoration: none;
 }
 
-/* Horizontal ruler */
+a:visited {
+    color: #6e1db9; 
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+li:not(:last-child) {
+    margin-bottom: 0.3em;
+}
+
 hr {
     border: none;
     height: 1px;
-    background-color: black;
+    background-color: #333;
     margin-top: 1.5em;
 }
 
-/* Use this on content to be displayed on its own page. */
-.text_margins {
-    margin-top: 2em;
-    margin-left: 8em;
-}
-
-/* Try to detect mobile devices using their pointer mechanism. This assumes that                        
-   all mobile devices are small and margins are not desired regardless of screen                        
-   resolution. */
-@media (pointer:coarse) {
-    .text_margins {
-        margin-top: 0em;
-        margin-left: 0em;
-    }
-}
-
 /* Lists used to link to posts and articles */
-.index_lists ul {
+.link_lists li:not(:last-child) {
+    margin-bottom: 0.1em;
+}
+.link_lists ul {
     list-style: none;
     margin-left: 0;
     padding-left: 2em;
 }
 
+/* Zebra tables */
+.table-zebra table {
+    border-collapse: collapse;
+}
+
+.table-zebra th, td {
+    text-align: left;
+    padding: 8px 16px 8px 16px;
+}
+
+.table-zebra tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Narrow column layout. */
+.col1 {
+    margin-top: 2em;
+    margin-left: 8em;
+    max-width: 45em;
+}
+
+/* Try to detect mobile devices using their pointer mechanism. This assumes that
+   all mobile devices are small and margins are not desired regardless of screen
+   resolution. */
+@media (pointer:coarse) {
+    .col1 {
+        margin-top: 0em;
+        margin-left: 0em;
+    }
+}
+
 /* Headline numbering class */
-.numbering {counter-reset: h2}
-.numbering h2 {counter-reset: h3}
-.numbering h3 {counter-reset: h4}
+.numbering { counter-reset: h2; }
+.numbering h2 { counter-reset: h3; }
+.numbering h3 { counter-reset: h4; }
 
-.numbering h2:before {counter-increment: h2; content: counter(h2) ". "}
-.numbering h3:before {counter-increment: h3; content: counter(h2) "." counter(h3) ". "}
-.numbering h4:before {counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) ". "}
+.numbering h2:before { counter-increment: h2; content: counter(h2) ". "; }
+.numbering h3:before { counter-increment: h3; content: counter(h2) "." counter(h3) ". "; }
+.numbering h4:before { counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) ". "; }
 
-.numbering h2.nocount:before, h3.nocount:before, h4.nocount:before { content: ""; counter-increment: none }
+.numbering h2.nocount:before, h3.nocount:before, h4.nocount:before { content: ""; counter-increment: none; }
 
-/* Article class */
-.article {
-    max-width: 50em;
-}
-
-.article h1 { color: #375EAB }
-.article h2 {
-    color: #375EAB;
-    margin-top: 1em;
-}
-.article h3 { color: #375EAB }
-
-.article pre, code {
-    font-family: monospace;
-}
-
-.article pre {
-    border-left: 5px solid #bbb;
-    padding: 6px 0px 6px 10px; 
-    margin-left: 2em;
+.video_16_9 {
+    object-fit: initial;
+    width:      100%;
+    height:     auto;
 }

@@ -12,7 +12,7 @@
 #   title=...         Document title
 #   lang=...          HTML language (default: "en")
 #   css_href=...      Relative path to style sheet (default: "css/style.css")
-#   div_class=...     CSS classes to use for text (default: "article text_margins")
+#   div_class=...     CSS classes to use for text (default: "col1")
 #   published=...     Published date (default" none)
 #   revised=...       Revised date (default: none)
 #
@@ -49,7 +49,7 @@ if [ -z "$css_href" ]; then
 fi
 
 if [ -z "$div_class" ]; then
-    div_class="article text_margins"
+    div_class="col1"
 fi
 
 html_keywords=""
@@ -87,10 +87,8 @@ if [ "x${published}${revised}" != x ]; then
     fi
     cat <<EOF
 <hr width="30%" align="left">
-<p>
 ${html_published}
 ${html_revised}
-</p>
 EOF
 fi
 
